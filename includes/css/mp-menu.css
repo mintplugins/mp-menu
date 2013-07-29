@@ -1,0 +1,93 @@
+#mp-menu-toggle-button-holder, #mp-menu-close-button-holder{
+	display:none;
+	z-index:9999999999;
+	position:relative;
+	top:0;
+}
+#mp-menu-toggle-button-holder .mp-menu-toggle:hover, #mp-menu-close-button-holder .mp-menu-close-button:hover{
+	text-decoration:none;
+	cursor: pointer; 
+}
+#mp-menu-toggle-button-holder .mp-menu-toggle, #mp-menu-close-button-holder .mp-menu-close-button{
+	display:inline-block;	
+}
+#mp-menu-holder{
+	display:none;	
+}
+.mp-menu-header-search{
+	display:none;
+}
+
+@media (max-width: 1180px){
+	
+	body{
+		overflow-x: hidden;	
+	}
+	
+	#mp-menu-toggle-button-holder, #mp-menu-close-button-holder{
+		display:inline-block;
+	}
+		
+	.mp-menu-open {
+		-webkit-transform: translate3d(240px, 0, 0);
+		-moz-transform: translate3d(240px, 0, 0);
+		transform: translate3d(240px, 0, 0);
+		transition: all .3s;
+	}
+	
+	.mp-menu-close {
+		-webkit-transform: translate3d(0, 0, 0);
+		-moz-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+		transition: all .3s;
+	}
+		
+	#mp-menu-holder{
+		display:block;	
+	}
+	
+	#mp-menu-holder [role~=navigation]{
+		padding: 20px;
+		width: 240px;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		overflow:hidden;
+		
+		-webkit-transform: translate3d(-240px, 0, 0);
+		-moz-transform: translate3d(-240px, 0, 0);
+		transform: translate3d(-240px, 0, 0);	
+		
+		-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+		-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+		box-sizing: border-box;         /* Opera/IE 8+ */
+		transition: all .3s;
+	}
+	
+	#mp-menu-holder .mp-menu-open{
+		-webkit-transform: translate3d(0, 0, 0)!important;
+		-moz-transform: translate3d(0, 0, 0)!important;
+		transform: translate3d(0, 0, 0)!important;	
+		transition: all .3s;
+	}
+	#mp-menu-holder ul{
+		margin:0;
+		padding:0;
+	}
+	
+	#mp-menu-holder [role~=navigation] ul, #mp-menu-holder [role~=navigation] ul li{
+		position:relative!important;
+		float:none!important;
+		display:block;
+		transition: all .3s;
+	}
+	#mp-menu-holder [role~=navigation] ul li ul, #mp-menu-holder [role~=navigation] ul li ul li ul, #mp-menu-holder [role~=navigation] ul li ul li ul li ul{
+		margin-left:10px;
+		top:0px;
+		background:none;
+	}
+	.mp-menu-header-search{
+		display:block;
+	}
+	
+}
