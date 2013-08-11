@@ -9,7 +9,14 @@
 	 wp_enqueue_style( 'mp_menu_animate_css', plugins_url( '/css/animate.css', dirname( __FILE__ ) ) );
 	 
 	 //MP Menu CSS
-	 wp_enqueue_style( 'mp_menu_css', plugins_url( '/css/mp-menu.css', dirname( __FILE__ ) ) );
+	 $menu_css = get_theme_mod( 'mp_menu_open_from' ) ;
+	 $menu_css = !empty( $menu_css ) ? $menu_css : 'mp-menu-left.css';
+	 wp_enqueue_style( 'mp_menu_css', plugins_url( '/css/' . $menu_css, dirname( __FILE__ ) ) );
+	 
+	  //MP Menu Skin
+	 $menu_skin = get_theme_mod( 'mp_menu_skin' ) ;
+	 $menu_skin = !empty( $menu_skin ) ? $menu_skin : 'mp-menu-default-skin.css';
+	 wp_enqueue_style( 'mp_menu_skin', plugins_url( '/css/skins/' . $menu_skin, dirname( __FILE__ ) ) );
 	 
 	  //MP Menu Font
 	 wp_enqueue_style( 'mp_menu_icon_font_css', plugins_url( '/css/mp-menu-icon-font.css', dirname( __FILE__ ) ) );

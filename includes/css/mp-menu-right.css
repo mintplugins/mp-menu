@@ -1,3 +1,7 @@
+html{min-height:100%;position:relative}
+body{
+	height:100%;	
+}
 #mp-menu-toggle-button-holder, #mp-menu-close-button-holder{
 	display:none;
 	z-index:9999999999;
@@ -10,6 +14,9 @@
 }
 #mp-menu-toggle-button-holder .mp-menu-toggle, #mp-menu-close-button-holder .mp-menu-close-button{
 	display:inline-block;	
+}
+#mp-menu-close-button-holder{
+	float:left;	
 }
 #mp-menu-holder{
 	display:none;	
@@ -29,9 +36,11 @@
 	}
 		
 	.mp-menu-open {
-		-webkit-transform: translate3d(240px, 0, 0);
-		-moz-transform: translate3d(240px, 0, 0);
-		transform: translate3d(240px, 0, 0);
+		-webkit-transform: translate3d(-240px, 0, 0);
+		-moz-transform: translate3d(-240px, 0, 0);
+		transform: translate3d(-240px, 0, 0);
+		
+		-webkit-transition: all .3s;
 		transition: all .3s;
 	}
 	
@@ -39,6 +48,8 @@
 		-webkit-transform: translate3d(0, 0, 0);
 		-moz-transform: translate3d(0, 0, 0);
 		transform: translate3d(0, 0, 0);
+		
+		-webkit-transition: all .3s;
 		transition: all .3s;
 	}
 		
@@ -50,17 +61,21 @@
 		padding: 20px;
 		width: 240px;
 		height: 100%;
+		margin:0px!important;
 		position: absolute;
 		top: 0;
+		right: 0px;
 		overflow:hidden;
 		
-		-webkit-transform: translate3d(-240px, 0, 0);
-		-moz-transform: translate3d(-240px, 0, 0);
-		transform: translate3d(-240px, 0, 0);	
+		-webkit-transform: translate3d(240px, 0, 0);
+		-moz-transform: translate3d(240px, 0, 0);
+		transform: translate3d(240px, 0, 0);	
 		
 		-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 		-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 		box-sizing: border-box;         /* Opera/IE 8+ */
+		
+		-webkit-transition: all .3s;
 		transition: all .3s;
 	}
 	
@@ -68,24 +83,11 @@
 		-webkit-transform: translate3d(0, 0, 0)!important;
 		-moz-transform: translate3d(0, 0, 0)!important;
 		transform: translate3d(0, 0, 0)!important;	
+		
+		-webkit-transition: all .3s;
 		transition: all .3s;
 	}
-	#mp-menu-holder ul{
-		margin:0;
-		padding:0;
-	}
-	
-	#mp-menu-holder [role~=navigation] ul, #mp-menu-holder [role~=navigation] ul li{
-		position:relative!important;
-		float:none!important;
-		display:block;
-		transition: all .3s;
-	}
-	#mp-menu-holder [role~=navigation] ul li ul, #mp-menu-holder [role~=navigation] ul li ul li ul, #mp-menu-holder [role~=navigation] ul li ul li ul li ul{
-		margin-left:10px;
-		top:0px;
-		background:none;
-	}
+		
 	.mp-menu-header-search{
 		display:block;
 	}

@@ -1,0 +1,55 @@
+@media (max-width: 1180px){
+	
+	#mp-menu-holder li a:not(:last-child):after{
+		content: '►';
+		margin-left: 5px;
+		font-size: 70%;
+		display: inline-block;
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		-o-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		transform: rotate(0deg);
+		
+		-webkit-transition: all .3s;
+		transition: all .3s;
+	}
+	
+	#mp-menu-holder li a:not(:last-child):hover:after{
+		-webkit-transform: rotate(90deg);
+		-moz-transform: rotate(90deg);
+		-o-transform: rotate(90deg);
+		-ms-transform: rotate(90deg);
+		transform: rotate(90deg);
+	}
+	
+	#mp-menu-holder ul,  #mp-menu-holder [role~=navigation] ul li{
+		margin:0!important;;
+		padding:0!important;
+	}
+	
+	#mp-menu-holder [role~=navigation] ul li a{
+		display:block;
+		 padding:5px 0px 5px 0px!important;
+	}
+	
+	#mp-menu-holder [role~=navigation] ul, #mp-menu-holder [role~=navigation] ul li{
+		position:relative!important;
+		float:none!important;
+		clear: left;
+		display:block;
+	}
+	#mp-menu-holder [role~=navigation] ul li ul, #mp-menu-holder [role~=navigation] ul li ul li ul, #mp-menu-holder [role~=navigation] ul li ul li ul li ul{
+		margin-left:20px!important;
+		top:0px;
+		left:0px;
+		background:none;
+	}
+	/*Reset hover show/hide for dropdown menus. This is now handled by jquery on "click" */
+	#mp-menu-holder [role~=navigation] ul li:hover ul,
+	#mp-menu-holder [role~=navigation] ul li ul li:hover ul,
+	#mp-menu-holder [role~=navigation] ul li ul li ul li:hover ul,
+	#mp-menu-holder [role~=navigation] ul li ul li ul li ul li:hover ul{
+		display:none;
+	}
+}

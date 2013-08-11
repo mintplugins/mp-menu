@@ -8,7 +8,7 @@
  * Step 3. Go to line 17 and set the title for this tab.
  * Step 4. Begin creating your custom options on line 30
  * Go here for full setup instructions: 
- * http://moveplugins.com/settings-class/
+ * http://moveplugins.com/doc/settings-class/
  */
 
 
@@ -18,7 +18,7 @@
 function mp_menu_settings_general_new_tab( $active_tab ){
 	
 	//Create array containing the title and slug for this new tab
-	$tab_info = array( 'title' => __('Sermon Settings' , 'mp_sermons'), 'slug' => 'general' );
+	$tab_info = array( 'title' => __('MP Menu Settings' , 'mp_menu'), 'slug' => 'general' );
 	
 	global $mp_menu_settings; $mp_menu_settings->new_tab( $active_tab, $tab_info );
 		
@@ -40,23 +40,37 @@ function mp_menu_settings_general_create(){
 	
 	add_settings_section(
 		'general_settings',
-		__( 'General Settings', 'mp_sermons' ),
+		__( 'General Settings', 'mp_menu' ),
 		'__return_false',
 		'mp_menu_settings_general'
 	);
 	
 	add_settings_field(
-		'mp_sermons_bibly_popup',
-		__( 'Bible Verse Popups', 'mp_sermons' ), 
-		'mp_core_checkbox',
+		'mp_menu_bg_color',
+		__( 'Menu Background Color', 'mp_menu' ), 
+		'mp_core_colorpicker',
 		'mp_menu_settings_general',
 		'general_settings',
 		array(
-			'name'        => 'mp_sermons_bibly_popup',
-			'value'       => mp_core_get_option( 'mp_menu_settings_general',  'mp_sermons_bibly_popup' ),
-			'preset_value'       => "popup",
-			'description' => __( 'Do you want the bible verses to popup when rolled over?', 'mp_sermons' ),
+			'name'        => 'mp_menu_bg_color',
+			'value'       => mp_core_get_option( 'mp_menu_settings_general',  'mp_menu_bg_color' ),
+			'description' => __( 'Set the background color you want to use for the pop-out-menu. (Optional)', 'mp_menu' ),
 			'registration'=> 'mp_menu_settings_general',
+		)
+	);
+	
+	add_settings_field(
+		'mp_menu_popout_location',
+		__( 'Popout Location', 'mp_menu' ), 
+		'mp_core_select',
+		'mp_menu_settings_general',
+		'general_settings',
+		array(
+			'name'        => 'mp_menu_popout_location',
+			'value'       => mp_core_get_option( 'mp_menu_settings_general',  'mp_menu_popout_location' ),
+			'description' => __( 'From where should the menu pop-out?', 'mp_menu' ),
+			'registration'=> 'mp_menu_settings_general',
+			'options'=> array( 'left' => "Left", 'right' => "Right" ),
 		)
 	);
 		

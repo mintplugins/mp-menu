@@ -133,6 +133,17 @@ function mp_menu_include_files(){
 		 */
 		require( MP_MENU_PLUGIN_DIR . 'includes/misc-functions/enqueue-scripts.php' );
 		
+				
+		/**
+		 * MP Menu Settings Page
+		 */
+		require( MP_MENU_PLUGIN_DIR . 'includes/settings/menu-settings/settings-options.php' );
+		
+		/**
+		 * MP Menu Customizer
+		 */
+		require( MP_MENU_PLUGIN_DIR . 'includes/misc-functions/customizer.php' );
+		
 		/**
 		 * Menu Hook functions
 		 */
