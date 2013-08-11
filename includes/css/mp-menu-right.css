@@ -1,6 +1,10 @@
-html{min-height:100%;position:relative}
+html, #mp-menu-site-wrap{
+	min-height:100%;
+	overflow-x: hidden;
+	position:relative;
+}
 body{
-	height:100%;	
+	height:100%;
 }
 #mp-menu-toggle-button-holder, #mp-menu-close-button-holder{
 	display:none;
@@ -27,14 +31,12 @@ body{
 
 @media (max-width: 1180px){
 	
-	body{
-		overflow-x: hidden;	
-	}
-	
+	/*toggle and close buttons */
 	#mp-menu-toggle-button-holder, #mp-menu-close-button-holder{
 		display:inline-block;
 	}
-		
+	
+	/*This gets applied to the body upon open*/
 	.mp-menu-open {
 		-webkit-transform: translate3d(-240px, 0, 0);
 		-moz-transform: translate3d(-240px, 0, 0);
@@ -44,22 +46,25 @@ body{
 		transition: all .3s;
 	}
 	
+	/*This gets applied to the body upon close */
 	.mp-menu-close {
 		-webkit-transform: translate3d(0, 0, 0);
 		-moz-transform: translate3d(0, 0, 0);
 		transform: translate3d(0, 0, 0);
+		right:0px;
 		
 		-webkit-transition: all .3s;
 		transition: all .3s;
 	}
-		
+	
+	/*This holds the menu when the screen is mobile sized */
 	#mp-menu-holder{
 		display:block;	
 	}
 	
+	/* This is the actual navigation div from wordpress when sitting in our mp-menu-holder div */
 	#mp-menu-holder [role~=navigation]{
 		width: 240px;
-		height: 100%;
 		margin:0px!important;
 		position: absolute;
 		top: 0;
@@ -78,6 +83,7 @@ body{
 		transition: all .3s;
 	}
 	
+	/*This gets applied to the navigation menu when it is "open" */
 	#mp-menu-holder .mp-menu-open{
 		-webkit-transform: translate3d(0, 0, 0)!important;
 		-moz-transform: translate3d(0, 0, 0)!important;

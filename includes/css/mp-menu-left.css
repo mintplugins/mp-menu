@@ -1,4 +1,7 @@
-html{min-height:100%;position:relative}
+html, #mp-menu-site-wrap{
+	min-height:100%;
+	overflow-x: hidden!important;
+}
 body{
 	height:100%;	
 }
@@ -26,11 +29,7 @@ body{
 }
 
 @media (max-width: 1180px){
-	
-	body{
-		overflow-x: hidden;	
-	}
-	
+		
 	#mp-menu-toggle-button-holder, #mp-menu-close-button-holder{
 		display:inline-block;
 	}
@@ -59,7 +58,6 @@ body{
 	
 	#mp-menu-holder [role~=navigation]{
 		width: 240px;
-		height: 100%;
 		margin:0px!important;
 		position: absolute;
 		top: 0;

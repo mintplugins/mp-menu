@@ -1,7 +1,10 @@
 jQuery(document).ready(function($){
+	
+	//Wrap body is holding div which can have values which are not processed on 'body' or 'html'
+	$( 'body' ).wrapInner('<div id="mp-menu-site-wrap" />');
 		
 	//Add menu holder to screen
-	$( 'body' ).prepend( '<div id="mp-menu-holder"></div>' );
+	$( '#mp-menu-site-wrap' ).prepend( '<div id="mp-menu-holder"></div>' );
 	
 	//If the wpadminbar is on the screen
 	if ($('#wpadminbar').length != 0) {
@@ -21,12 +24,10 @@ jQuery(document).ready(function($){
 	
 	//Items which should have the "open" or "close" class added to them
 	var $items = $( '.site, .hfeed, [role=navigation]' );
-	var $content = $('body');
 	
 	//Open function
 	var open = function() {
 		//$( 'body' ).addClass( 'mobile-open' );
-		$content.addClass( 'mp-menu-body-open' );
 		$items.removeClass('mp-menu-close').addClass('mp-menu-open');
 		
 	}
@@ -34,7 +35,6 @@ jQuery(document).ready(function($){
 	//Close function
 	var close = function() { 
 		//$( 'body' ).delay(300).removeClass( 'mobile-open' );
-		$content.removeClass( 'mp-menu-body-open' );
 		$items.removeClass('mp-menu-open').addClass('mp-menu-close');
 		
 		//After the transition is done, remove the mp-menu-close class because it breaks fixed menus because the properites conflict		
@@ -49,7 +49,7 @@ jQuery(document).ready(function($){
 		
 		e.preventDefault();
 
-		$content.hasClass( 'mp-menu-body-open' ) ? $(close) : $(open);
+		$items.hasClass( 'mp-menu-open' ) ? $(close) : $(open);
 	});
 	
 	//When the screen is smaller than 1180px
