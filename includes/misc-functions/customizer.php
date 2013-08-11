@@ -15,6 +15,15 @@ function mp_menu_customizer(){
 	$args = array(
 		array( 'section_id' => 'mp_menu_settings', 'section_title' => __( 'MP Menu', 'mp_core' ),'section_priority' => 1,
 			'settings' => array(
+				'mp_menu_toggle_color' => array(
+					'label'      => __( 'Toggle Switch Color:', 'mp_core' ),
+					'type'       => 'color',
+					'default'    => '',
+					'priority'   => 1,
+					'element'    => '.mp-menu-toggle',
+					'jquery_function_name' => 'css',
+					'arg' => 'color'
+				),
 				'mp_menu_open_from' => array(
 					'label'      => __( 'Open Menu From:', 'mp_core' ),
 					'type'       => 'select',
@@ -40,6 +49,16 @@ function mp_menu_customizer(){
 					'element'    => '#mp-menu-holder [role~=navigation] a, #mp-menu-holder [role~=navigation] ul li a',
 					'jquery_function_name' => 'css',
 					'arg' => 'color'
+				),
+				'mp_menu_attachment' => array(
+					'label'      => __( 'Menu Attachment', 'mp_core' ),
+					'type'       => 'radio',
+					'default'    => '',
+					'priority'   => 1,
+					'element'    => '#mp-menu-holder [role~=navigation]',
+					'jquery_function_name' => 'css',
+					'arg' => 'position',
+					'choices'   => array( 'absolute' => "Scroll", 'fixed' => 'Fixed' ),
 				),
 			)
 		)

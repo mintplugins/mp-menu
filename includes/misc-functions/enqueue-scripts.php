@@ -17,14 +17,11 @@
 	 $menu_skin = get_theme_mod( 'mp_menu_skin' ) ;
 	 $menu_skin = !empty( $menu_skin ) ? $menu_skin : 'mp-menu-default-skin.css';
 	 wp_enqueue_style( 'mp_menu_skin', plugins_url( '/css/skins/' . $menu_skin, dirname( __FILE__ ) ) );
-	 
-	  //MP Menu Font
-	 wp_enqueue_style( 'mp_menu_icon_font_css', plugins_url( '/css/mp-menu-icon-font.css', dirname( __FILE__ ) ) );
-	 
-	  //Enable Media Queries for JS
+	 	 
+	 //Enable Media Queries for JS
 	 wp_enqueue_script( 'mp_menu_enquire', plugins_url( '/js/enquire.min.js', dirname( __FILE__ ) ) );
 	 
-	  //MP Menu JS
+	 //MP Menu JS
 	 wp_enqueue_script( 'mp_menu_icon_font_css', plugins_url( '/js/mp-menu.js', dirname( __FILE__ ) ), array( 'jquery', 'mp_menu_enquire' ) );
 	 
  }

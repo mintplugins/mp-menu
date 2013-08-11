@@ -1,9 +1,73 @@
+@font-face {
+  font-family: 'mp_menu';
+  src: url('../../fonts/mp_menu.eot?70254484');
+  src: url('../../fonts/mp_menu.eot?70254484#iefix') format('embedded-opentype'),
+       url('../../fonts/mp_menu.woff?70254484') format('woff'),
+       url('../../fonts/mp_menu.ttf?70254484') format('truetype'),
+       url('../../fonts/mp_menu.svg?70254484#mp_menu') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'mp_menu';
+    src: url('../fonts/mp_menu.svg?70254484#mp_menu') format('svg');
+  }
+}
+*/
+ 
+ [class^="mp-menu-"]:before, [class*=" mp-menu-"]:before {
+  font-family: "mp_menu";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+ 
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  text-align: center;
+  /* opacity: .8; */
+ 
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+     
+  font-size:44px;
+ 
+  /* you can be more comfortable with increased mp-menus size */
+  /* font-size: 120%; */
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+ 
+.mp-menu-th-list:before { content: '\e82e'; } /* '' */
+.mp-menu-menu-1:before { content: '\e800'; } /* '' */
+.mp-menu-cancel:before { content: '\e804'; } /* '' */
+.mp-menu-cancel-circled:before { content: '\e805'; } /* '' */
+.mp-menu-menu-outline:before { content: '\e802'; } /* '' */
+.mp-menu-menu-2:before { content: '\e801'; } /* '' */
+.mp-menu-right-open-1:before { content: '\e807'; } /* '' */
+.mp-menu-menu-3:before { content: '\e803'; } /* '' */
+.mp-menu-menu:before { content: '\e82f'; } /* '' */
+.mp-menu-angle-right:before { content: '\e806'; } /* '' */
+
 @media (max-width: 1180px){
+	#mp-menu-holder [role~=navigation]{
+		padding: 5px 20px 0px 20px;
+	}
+	
+	#mp-menu-holder [role~=navigation] div{
+		float:none;
+	}
 	
 	#mp-menu-holder li a:not(:last-child):after{
-		content: '►';
+		font-family: "mp_menu";
+		content: '\e806';
 		margin-left: 5px;
-		font-size: 70%;
 		display: inline-block;
 		-webkit-transform: rotate(0deg);
 		-moz-transform: rotate(0deg);
@@ -38,6 +102,7 @@
 		float:none!important;
 		clear: left;
 		display:block;
+		border:none;
 	}
 	#mp-menu-holder [role~=navigation] ul li ul, #mp-menu-holder [role~=navigation] ul li ul li ul, #mp-menu-holder [role~=navigation] ul li ul li ul li ul{
 		margin-left:20px!important;
@@ -46,10 +111,20 @@
 		background:none;
 	}
 	/*Reset hover show/hide for dropdown menus. This is now handled by jquery on "click" */
+	#mp-menu-holder [role~=navigation] ul li ul,
 	#mp-menu-holder [role~=navigation] ul li:hover ul,
 	#mp-menu-holder [role~=navigation] ul li ul li:hover ul,
 	#mp-menu-holder [role~=navigation] ul li ul li ul li:hover ul,
 	#mp-menu-holder [role~=navigation] ul li ul li ul li ul li:hover ul{
 		display:none;
+	}
+	
+	.mp-menu-toggle:before{
+		content:'\e800';
+	}
+	.mp-menu-close-button:before{
+		content: '\e805';
+		font-size:150%;
+		margin-left:-3px;
 	}
 }

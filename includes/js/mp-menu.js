@@ -7,10 +7,10 @@ jQuery(document).ready(function($){
 	$( '[role=navigation]' ).filter(':even').after( '<div id="mp-menu-navigation-placeholder"></div>' );
   	
 	//Add menu toggle to screen
-	$( '[role=navigation]' ).filter(':even').after( '<div id="mp-menu-toggle-button-holder"><a class="mp-menu-menu-1 mp-menu-toggle"></a></div>' );
+	$( '[role=navigation]' ).filter(':even').after( '<div id="mp-menu-toggle-button-holder"><a class="mp-menu-toggle"></a></div>' );
 	
 	//Add close menu to mp-menu-holder
-	$( '[role=navigation]' ).filter(':even').prepend( '<div id="mp-menu-close-button-holder"><a class="mp-menu-menu-1 mp-menu-close-button"></a></div><div style="clear: both;"></div>' );
+	$( '[role=navigation]' ).filter(':even').append( '<div id="mp-menu-close-button-holder"><a class="mp-menu-close-button"></a></div><div style="clear: both;"></div>' );
 	
 	//Items which should have the "open" or "close" class added to them
 	var $items = $( '.site, .hfeed, [role=navigation]' );
@@ -54,6 +54,18 @@ jQuery(document).ready(function($){
 				//Move site navigation - this only needs to be done if the overflow:hidden value is set on the parent. This must be moved outside of that
 				$( '#mp-menu-holder' ).append( $( '[role=navigation]' ).filter(':even') );
 				
+				//Dropdowns - show them when clicked 
+				$(document).on('click', '#mp-menu-holder li a:not(:last-child)', function(menu_item_clicked){
+					
+					//Prevent the default click action
+					menu_item_clicked.preventDefault();
+					
+					//Toggle the desplay of this drodown sub-menu
+					$(this).next().slideToggle();
+								
+				});
+	
+				
 			},      
 										
 			// If supplied, triggered when the media query transitions 
@@ -62,20 +74,12 @@ jQuery(document).ready(function($){
 				
 				//Move site navigation back to its original location
 				$( '#mp-menu-navigation-placeholder' ).before( $( '[role=navigation]' ).filter(':even') );
-					
+				
+				//Remove all inline display styles added to li elements for dropdowns
+				$( '.sub-menu' ).css( 'display', '' );
+									
 			}
 			
 	});
-	
-	//Dropdowns - show them when clicked 
-	$("#mp-menu-holder li a:not(:last-child)").click(function(menu_item_clicked){
 		
-		//Prevent the default click action
-		menu_item_clicked.preventDefault();
-		
-		//Toggle the desplay of this drodown sub-menu
-		$(this).next().slideToggle();
-			
-	});
-	
 });

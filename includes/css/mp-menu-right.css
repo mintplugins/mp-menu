@@ -58,7 +58,6 @@ body{
 	}
 	
 	#mp-menu-holder [role~=navigation]{
-		padding: 20px;
 		width: 240px;
 		height: 100%;
 		margin:0px!important;
