@@ -16,4 +16,4 @@
 		$mp_menu_plugin_updater = new MP_CORE_Plugin_Updater($args);
 	}
  }
-add_action( 'admin_init', 'mp_menu_update' );
+add_action( 'init', 'mp_menu_update' );

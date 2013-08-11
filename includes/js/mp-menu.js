@@ -3,14 +3,21 @@ jQuery(document).ready(function($){
 	//Add menu holder to screen
 	$( 'body' ).prepend( '<div id="mp-menu-holder"></div>' );
 	
-	//Store location of navigation by adding a placeholder div after it
-	$( '[role=navigation]' ).filter(':even').after( '<div id="mp-menu-navigation-placeholder"></div>' );
+	//If the wpadminbar is on the screen
+	if ($('#wpadminbar').length != 0) {
+		navigation_selector = ':eq(0)';
+	} else {
+		navigation_selector = ':first';
+	}
+  
+	//Store location of navigation by adding a placeholder div after it 
+	$( '[role=navigation]' ).filter(navigation_selector).after( '<div id="mp-menu-navigation-placeholder"></div>' );
   	
 	//Add menu toggle to screen
-	$( '[role=navigation]' ).filter(':even').after( '<div id="mp-menu-toggle-button-holder"><a class="mp-menu-toggle"></a></div>' );
+	$( '[role=navigation]' ).filter(navigation_selector).after( '<div id="mp-menu-toggle-button-holder"><a class="mp-menu-toggle"></a></div>' );
 	
 	//Add close menu to mp-menu-holder
-	$( '[role=navigation]' ).filter(':even').append( '<div id="mp-menu-close-button-holder"><a class="mp-menu-close-button"></a></div><div style="clear: both;"></div>' );
+	$( '[role=navigation]' ).filter(navigation_selector).append( '<div id="mp-menu-close-button-holder"><a class="mp-menu-close-button"></a></div><div style="clear: both;"></div>' );
 	
 	//Items which should have the "open" or "close" class added to them
 	var $items = $( '.site, .hfeed, [role=navigation]' );
@@ -52,7 +59,7 @@ jQuery(document).ready(function($){
 			match : function() {
 				
 				//Move site navigation - this only needs to be done if the overflow:hidden value is set on the parent. This must be moved outside of that
-				$( '#mp-menu-holder' ).append( $( '[role=navigation]' ).filter(':even') );
+				$( '#mp-menu-holder' ).append( $( '[role=navigation]' ).filter(navigation_selector) );
 				
 				//Dropdowns - show them when clicked 
 				$(document).on('click', '#mp-menu-holder li a:not(:last-child)', function(menu_item_clicked){
@@ -73,7 +80,7 @@ jQuery(document).ready(function($){
 			unmatch : function() {
 				
 				//Move site navigation back to its original location
-				$( '#mp-menu-navigation-placeholder' ).before( $( '[role=navigation]' ).filter(':even') );
+				$( '#mp-menu-navigation-placeholder' ).before( $( '[role=navigation]' ).filter(navigation_selector) );
 				
 				//Remove all inline display styles added to li elements for dropdowns
 				$( '.sub-menu' ).css( 'display', '' );
