@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'mp_menu';
-  src: url('../../fonts/mp_menu.eot?70254484');
-  src: url('../../fonts/mp_menu.eot?70254484#iefix') format('embedded-opentype'),
-       url('../../fonts/mp_menu.woff?70254484') format('woff'),
-       url('../../fonts/mp_menu.ttf?70254484') format('truetype'),
-       url('../../fonts/mp_menu.svg?70254484#mp_menu') format('svg');
+  src: url('mp_menu.eot?70254484');
+  src: url('mp_menu.eot?70254484#iefix') format('embedded-opentype'),
+       url('mp_menu.woff?70254484') format('woff'),
+       url('mp_menu.ttf?70254484') format('truetype'),
+       url('mp_menu.svg?70254484#mp_menu') format('svg');
   font-weight: normal;
   font-style: normal;
 }
