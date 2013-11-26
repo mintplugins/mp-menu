@@ -14,7 +14,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'mp_menu';
-    src: url('../fonts/mp_menu.svg?70254484#mp_menu') format('svg');
+    src: url('mp_menu.svg?70254484#mp_menu') format('svg');
   }
 }
 */

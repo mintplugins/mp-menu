@@ -5,9 +5,6 @@
  */
  function mp_menu_enqueue_scripts(){
 	 
-	 //Animate CSS
-	 wp_enqueue_style( 'mp_menu_animate_css', plugins_url( '/css/animate.css', dirname( __FILE__ ) ) );
-	 
 	 //MP Menu CSS
 	 $menu_css = get_theme_mod( 'mp_menu_open_from' ) ;
 	 $menu_css = !empty( $menu_css ) ? $menu_css : 'mp-menu-left.css';
