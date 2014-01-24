@@ -3,7 +3,7 @@
 Plugin Name: MP Menu
 Plugin URI: http://moveplugins.com
 Description: Show a mobile popout when the screen gets too small
-Version: beta1.0.0.8
+Version: beta1.0.1.0
 Author: Move Plugins
 Author URI: http://moveplugins.com
 Text Domain: mp_menu
