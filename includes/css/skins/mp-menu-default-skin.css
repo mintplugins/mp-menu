@@ -56,15 +56,35 @@
 .mp-menu-angle-right:before { content: '\e806'; } /* '' */
 
 @media (max-width: 1180px){
-	#mp-menu-holder [role~=navigation]{
+	#mp-menu-holder #mp-menu-holder-inner [role~=navigation]{
 		padding: 5px 20px 0px 20px;
 	}
 	
-	#mp-menu-holder [role~=navigation] div{
+	#mp-menu-holder #mp-menu-holder-inner [role~=navigation] div{
 		float:none;
 	}
 	
-	#mp-menu-holder li a:not(:last-child):after{
+	#mp-menu-holder #mp-menu-holder-inner ul{
+		box-shadow:none;
+		border-radius:0;
+		opacity:1;
+		-webkit-backface-visibility:visible;
+		-moz-backface-visibility: visible;
+		backface-visibility: visible;
+		-webkit-transform: none;
+		-moz-transform: none;
+		transform: none;
+	}
+	
+	#mp-menu-holder #mp-menu-holder-inner li a{
+		border-radius:0;	
+	}
+	
+	#mp-menu-holder #mp-menu-holder-inner li a:hover{
+		background:none;	
+	}
+	
+	#mp-menu-holder #mp-menu-holder-inner li a:not(:last-child):after{
 		font-family: "mp_menu";
 		content: '\e806';
 		margin-left: 5px;
@@ -79,7 +99,7 @@
 		transition: all .3s;
 	}
 	
-	#mp-menu-holder li a:not(:last-child):hover:after{
+	#mp-menu-holder #mp-menu-holder-inner li a:not(:last-child):hover:after{
 		-webkit-transform: rotate(90deg);
 		-moz-transform: rotate(90deg);
 		-o-transform: rotate(90deg);
@@ -87,35 +107,40 @@
 		transform: rotate(90deg);
 	}
 	
-	#mp-menu-holder ul,  #mp-menu-holder [role~=navigation] ul li{
+	#mp-menu-holder #mp-menu-holder-inner ul,  #mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li{
 		margin:0!important;;
 		padding:0!important;
 	}
 	
-	#mp-menu-holder [role~=navigation] ul li a{
+	#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul:after{
+		border:none;
+		border-radius:0;
+	}
+	
+	#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li a{
 		display:block;
 		 padding:5px 0px 5px 0px!important;
 	}
 	
-	#mp-menu-holder [role~=navigation] ul, #mp-menu-holder [role~=navigation] ul li{
+	#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul, #mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li{
 		position:relative!important;
 		float:none!important;
 		clear: left;
 		display:block;
 		border:none;
 	}
-	#mp-menu-holder [role~=navigation] ul li ul, #mp-menu-holder [role~=navigation] ul li ul li ul, #mp-menu-holder [role~=navigation] ul li ul li ul li ul{
+	#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul, #mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul li ul, #mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul li ul li ul{
 		margin-left:20px!important;
 		top:0px;
 		left:0px;
 		background:none;
 	}
 	/*Reset hover show/hide for dropdown menus. This is now handled by jquery on "click" */
-	#mp-menu-holder [role~=navigation] ul li ul,
-	#mp-menu-holder [role~=navigation] ul li:hover ul,
-	#mp-menu-holder [role~=navigation] ul li ul li:hover ul,
-	#mp-menu-holder [role~=navigation] ul li ul li ul li:hover ul,
-	#mp-menu-holder [role~=navigation] ul li ul li ul li ul li:hover ul{
+	#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul,
+	#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li:hover ul,
+	#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul li:hover ul,
+	#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul li ul li:hover ul,
+	#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul li ul li ul li:hover ul{
 		display:none;
 	}
 	

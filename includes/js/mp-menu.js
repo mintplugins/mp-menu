@@ -4,7 +4,7 @@ jQuery(document).ready(function($){
 	$( 'body' ).wrapInner('<div id="mp-menu-site-wrap" />');
 		
 	//Add menu holder to screen
-	$( '#mp-menu-site-wrap' ).prepend( '<div id="mp-menu-holder"></div>' );
+	$( '#mp-menu-site-wrap' ).prepend( '<div id="mp-menu-holder"><div id="mp-menu-holder-inner"></div></div>' );
 	
 	//If the wpadminbar is on the screen
 	if ($('#wpadminbar').length != 0) {
@@ -59,10 +59,10 @@ jQuery(document).ready(function($){
 			match : function() {
 				
 				//Move site navigation - this only needs to be done if the overflow:hidden value is set on the parent. This must be moved outside of that
-				$( '#mp-menu-holder' ).append( $( '[role=navigation]' ).filter(navigation_selector) );
+				$( '#mp-menu-holder #mp-menu-holder-inner' ).append( $( '[role=navigation]' ).filter(navigation_selector) );
 				
 				//Dropdowns - show them when clicked 
-				$(document).on('click', '#mp-menu-holder li a:not(:last-child)', function(menu_item_clicked){
+				$(document).on('click', '#mp-menu-holder #mp-menu-holder-inner li a:not(:last-child)', function(menu_item_clicked){
 					
 					//Prevent the default click action
 					menu_item_clicked.preventDefault();
