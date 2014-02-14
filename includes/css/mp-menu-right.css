@@ -25,10 +25,6 @@ body{
 #mp-menu-holder{
 	display:none;	
 }
-.mp-menu-header-search{
-	display:none;
-}
-
 @media (max-width: 1180px){
 	
 	/*toggle and close buttons */

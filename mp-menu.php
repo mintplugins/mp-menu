@@ -2,8 +2,8 @@
 /*
 Plugin Name: MP Menu
 Plugin URI: http://moveplugins.com
-Description: Show a mobile popout when the screen gets too small
-Version: beta1.0.1.0
+Description: Automatically show a mobile popout for navigation on mobile devices.
+Version: beta1.0.1.1
 Author: Move Plugins
 Author URI: http://moveplugins.com
 Text Domain: mp_menu
@@ -11,7 +11,7 @@ Domain Path: languages
 License: GPL2
 */
 
-/*  Copyright 2012  Phil Johnston  (email : phil@moveplugins.com)
+/*  Copyright 2014  Phil Johnston  (email : phil@moveplugins.com)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License, version 2, as 
@@ -34,7 +34,7 @@ License: GPL2
 */
 // Plugin version
 if( !defined( 'MP_MENU_VERSION' ) )
-	define( 'MP_MENU_VERSION', '1.0.0.7' );
+	define( 'MP_MENU_VERSION', '1.0.0.0' );
 
 // Plugin Folder URL
 if( !defined( 'MP_MENU_PLUGIN_URL' ) )
@@ -133,22 +133,11 @@ function mp_menu_include_files(){
 		 */
 		require( MP_MENU_PLUGIN_DIR . 'includes/misc-functions/enqueue-scripts.php' );
 		
-				
-		/**
-		 * MP Menu Settings Page
-		 */
-		require( MP_MENU_PLUGIN_DIR . 'includes/settings/menu-settings/settings-options.php' );
-		
 		/**
 		 * MP Menu Customizer
 		 */
 		require( MP_MENU_PLUGIN_DIR . 'includes/misc-functions/customizer.php' );
 		
-		/**
-		 * Menu Hook functions
-		 */
-		require( MP_MENU_PLUGIN_DIR . 'includes/misc-functions/hooks.php' );
-					
 	}
 }
 add_action('plugins_loaded', 'mp_menu_include_files', 9);

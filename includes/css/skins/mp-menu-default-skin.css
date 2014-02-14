@@ -59,6 +59,7 @@
 @media (max-width: 1180px){
 	#mp-menu-holder #mp-menu-holder-inner [role~=navigation]{
 		padding: 5px 20px 0px 20px;
+		height:100%;
 	}
 	
 	#mp-menu-holder #mp-menu-holder-inner [role~=navigation] div{
