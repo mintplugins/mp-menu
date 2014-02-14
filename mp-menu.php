@@ -3,7 +3,7 @@
 Plugin Name: MP Menu
 Plugin URI: http://moveplugins.com
 Description: Automatically show a mobile popout for navigation on mobile devices.
-Version: beta1.0.1.1
+Version: beta1.0.1.2
 Author: Move Plugins
 Author URI: http://moveplugins.com
 Text Domain: mp_menu
