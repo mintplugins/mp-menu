@@ -54,7 +54,7 @@ jQuery(document).ready(function($){
 	});
 	
 	//If the user clicks on the main site area, close the nav as well
-	$(document).on('click', '#mp-menu-site-wrap > .site.mp-menu-open, #mp-menu-site-wrap > .hfeed.mp-menu-open', function(e){
+	$(document).on('touchstart click', '#mp-menu-site-wrap > .site.mp-menu-open, #mp-menu-site-wrap > .hfeed.mp-menu-open', function(e){
 				
 		$(close);
 		

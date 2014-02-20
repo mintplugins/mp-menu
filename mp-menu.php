@@ -3,7 +3,7 @@
 Plugin Name: MP Menu
 Plugin URI: http://moveplugins.com
 Description: Automatically show a mobile popout for navigation on mobile devices.
-Version: 1.0.0.0
+Version: 1.0.0.1
 Author: Move Plugins
 Author URI: http://moveplugins.com
 Text Domain: mp_menu
@@ -34,7 +34,7 @@ License: GPL2
 */
 // Plugin version
 if( !defined( 'MP_MENU_VERSION' ) )
-	define( 'MP_MENU_VERSION', '1.0.0.0' );
+	define( 'MP_MENU_VERSION', '1.0.0.1' );
 
 // Plugin Folder URL
 if( !defined( 'MP_MENU_PLUGIN_URL' ) )

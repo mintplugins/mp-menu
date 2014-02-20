@@ -4,7 +4,7 @@ Donate link: http://moveplugins.com/
 Tags: message bar, header
 Requires at least: 3.5
 Tested up to: 3.8.1
-Stable tag: 1.0.0.0
+Stable tag: 1.0.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,9 @@ Set the colours and pop-out location not he “Appearance” > “Customize” s
 == Screenshots ==
 
 == Changelog ==
+
+= 1.0.0.1 = February 20, 2014
+* Added touchstart for iPhones on close when clicking/touching on main page area
 
 = 1.0.0.0 = February 20, 2014
 * Original release
