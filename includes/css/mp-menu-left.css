@@ -28,7 +28,7 @@ body{
 	display:none;
 }
 
-@media (max-width: 1180px){
+@media (max-width: 600px){
 		
 	#mp-menu-toggle-button-holder, #mp-menu-close-button-holder{
 		display:inline-block;

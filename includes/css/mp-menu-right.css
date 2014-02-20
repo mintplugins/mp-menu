@@ -25,7 +25,7 @@ body{
 #mp-menu-holder{
 	display:none;	
 }
-@media (max-width: 1180px){
+@media (max-width: 600px){
 	
 	/*toggle and close buttons */
 	#mp-menu-toggle-button-holder, #mp-menu-close-button-holder{

@@ -28,8 +28,9 @@ jQuery(document).ready(function($){
 	//Open function
 	var open = function() {
 		//$( 'body' ).addClass( 'mobile-open' );
-		$items.removeClass('mp-menu-close').addClass('mp-menu-open');
-		
+		setTimeout(function() {
+			$items.removeClass('mp-menu-close').addClass('mp-menu-open');
+		}, 300);
 	}
 	
 	//Close function
@@ -52,8 +53,15 @@ jQuery(document).ready(function($){
 		$items.hasClass( 'mp-menu-open' ) ? $(close) : $(open);
 	});
 	
-	//When the screen is smaller than 1180px
-	enquire.register("screen and (max-width:1180px)", {
+	//If the user clicks on the main site area, close the nav as well
+	$(document).on('click', '#mp-menu-site-wrap > .site.mp-menu-open, #mp-menu-site-wrap > .hfeed.mp-menu-open', function(e){
+				
+		$(close);
+		
+	});
+	
+	//When the screen is smaller than 600px
+	enquire.register("screen and (max-width:600px)", {
 						
 			// If supplied, triggered when a media query matches.
 			match : function() {
@@ -70,8 +78,7 @@ jQuery(document).ready(function($){
 					//Toggle the desplay of this drodown sub-menu
 					$(this).next().slideToggle();
 								
-				});
-	
+				});	
 				
 			},      
 										
