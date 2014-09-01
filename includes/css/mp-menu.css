@@ -1,0 +1,24 @@
+html, #mp-menu-site-wrap{
+	min-height:100%;
+	overflow-x: hidden;
+	position:relative;
+}
+body{
+	height:100%;
+}
+#mp-menu-toggle-button-holder, #mp-menu-close-button-holder{
+	display:none;
+	z-index:9999999999;
+	position:relative;
+	top:0;
+}
+#mp-menu-toggle-button-holder .mp-menu-toggle:hover, #mp-menu-close-button-holder .mp-menu-close-button:hover{
+	text-decoration:none;
+	cursor: pointer; 
+}
+#mp-menu-toggle-button-holder .mp-menu-toggle, #mp-menu-close-button-holder .mp-menu-close-button{
+	display:inline-block;	
+}
+#mp-menu-close-button-holder{
+	float:left;	
+}
