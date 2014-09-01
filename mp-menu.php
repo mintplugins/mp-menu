@@ -3,7 +3,7 @@
 Plugin Name: MP Menu
 Plugin URI: http://mintplugins.com
 Description: Automatically show a mobile popout for navigation on mobile devices.
-Version: 1.0.0.2
+Version: 1.0.0.3
 Author: Mint Plugins
 Author URI: http://mintplugins.com
 Text Domain: mp_menu

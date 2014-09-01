@@ -4,11 +4,6 @@
  * Enqueue Scripts for the MP Menu
  */
  function mp_menu_enqueue_scripts(){
-	 
-	 //If this is the google bot, don't load as it may not be able to follow
-	if(strstr(strtolower($_SERVER['HTTP_USER_AGENT']), "googlebot")){
-		return;
-	}
 		
 	 //Get screen width for MP menu
 	 $screen_width = get_theme_mod('mp_menu_change_at_screen_width');

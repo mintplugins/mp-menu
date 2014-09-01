@@ -32,8 +32,12 @@ Set the colours and pop-out location not he “Appearance” > “Customize” s
 
 == Changelog ==
 
+= 1.0.0.3 = September 1, 2014
+* Removed auto turn off for Google Bot. This can be done through the new feature in the customizer which allows you to only use the pop-out at customized widths.
+
 = 1.0.0.2 = September 1, 2014
 * Turned off MP Menu for the Google Bot so that it can index our menus easier if it is at mobile size
+* Move to Mint
 
 = 1.0.0.1 = February 20, 2014
 * Added touchstart for iPhones on close when clicking/touching on main page area
