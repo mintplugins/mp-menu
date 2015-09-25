@@ -16,249 +16,254 @@
 	 $menu_css = get_theme_mod( 'mp_menu_open_from' ) ;
 	 $menu_css = !empty( $menu_css ) ? $menu_css : 'mp-menu-left.css';
 	 
+	 $output = '<!-- MP Menu CSS -->
+	 ';
+	  
 	 //Open from right CSS
 	 if ( $menu_css == 'mp-menu-left.css' ){
 		 
-		 echo '<style type="text/css">
+		 $output .= '<style type="text/css">';
 		 	
-			@media (max-width: ' . $screen_width . 'px){
+			 $output .= '@media (max-width: ' . $screen_width . 'px){';
 					
-				#mp-menu-toggle-button-holder, #mp-menu-close-button-holder{
-					display:inline-block;
-				}
+				 $output .= '#mp-menu-toggle-button-holder, #mp-menu-close-button-holder{';
+					 $output .= 'display:inline-block!important;';
+				 $output .= '}';
 					
-				.mp-menu-open {
-					-webkit-transform: translate3d(240px, 0, 0);
-					-moz-transform: translate3d(240px, 0, 0);
-					transform: translate3d(240px, 0, 0);
+				 $output .= '.mp-menu-open {';
+					 $output .= '-webkit-transform: translate3d(240px, 0, 0);';
+					 $output .= '-moz-transform: translate3d(240px, 0, 0);';
+					 $output .= 'transform: translate3d(240px, 0, 0);';
 					
-					-webkit-transition: all .3s;
-					transition: all .3s;
-				}
+					 $output .= '-webkit-transition: all .3s;';
+					 $output .= 'transition: all .3s;';
+				$output .= '}';
 				
-				.mp-menu-close {
-					-webkit-transform: translate3d(0, 0, 0);
-					-moz-transform: translate3d(0, 0, 0);
-					transform: translate3d(0, 0, 0);
+				$output .= '.mp-menu-close {';
+					$output .= '-webkit-transform: translate3d(0, 0, 0);';
+					$output .= '-moz-transform: translate3d(0, 0, 0);';
+					$output .= 'transform: translate3d(0, 0, 0);';
 					
-					-webkit-transition: all .3s;
-					transition: all .3s;
-				}
+					$output .= '-webkit-transition: all .3s;';
+					$output .= 'transition: all .3s;';
+				$output .= '}';
 					
-				#mp-menu-holder{
-					display:block;	
-				}
+				$output .= '#mp-menu-holder{';
+					$output .= 'display:block;';
+				$output .= '}';
 				
-				#mp-menu-holder [role~=navigation]{
-					width: 240px;
-					margin:0px!important;
-					position: absolute;
-					top: 0;
-					overflow:hidden;
+				$output .= '#mp-menu-holder [role~=navigation]{';
+					$output .= 'width: 240px;';
+					$output .= 'margin:0px!important;';
+					$output .= 'position: absolute;';
+					$output .= 'top: 0;';
+					$output .= 'overflow:hidden;';
 					
-					-webkit-transform: translate3d(-240px, 0, 0);
-					-moz-transform: translate3d(-240px, 0, 0);
-					transform: translate3d(-240px, 0, 0);	
+					$output .= '-webkit-transform: translate3d(-240px, 0, 0);';
+					$output .= '-moz-transform: translate3d(-240px, 0, 0);';
+					$output .= 'transform: translate3d(-240px, 0, 0);	';
 					
-					-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-					-moz-box-sizing: border-box;    /* Firefox, other Gecko */
-					box-sizing: border-box;         /* Opera/IE 8+ */
+					$output .= '-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */';
+					$output .= '-moz-box-sizing: border-box;    /* Firefox, other Gecko */';
+					$output .= 'box-sizing: border-box;         /* Opera/IE 8+ */';
 					
-					-webkit-transition: all .3s;
-					transition: all .3s;
-				}
+					$output .= '-webkit-transition: all .3s;';
+					$output .= 'transition: all .3s;';
+				$output .= '}';
 				
-				#mp-menu-holder .mp-menu-open{
-					-webkit-transform: translate3d(0, 0, 0)!important;
-					-moz-transform: translate3d(0, 0, 0)!important;
-					transform: translate3d(0, 0, 0)!important;	
+				$output .= '#mp-menu-holder .mp-menu-open{';
+					$output .= '-webkit-transform: translate3d(0, 0, 0)!important;';
+					$output .= '-moz-transform: translate3d(0, 0, 0)!important;';
+					$output .= 'transform: translate3d(0, 0, 0)!important;	';
 					
-					-webkit-transition: all .3s;
-					transition: all .3s;
-				}
+					$output .= '-webkit-transition: all .3s;';
+					$output .= 'transition: all .3s;';
+				$output .= '}';
 			
-			} </style>';
+			$output .= '} </style>';
 		 
 	 }
 	 //Open from left CSS
 	 else{
-		echo '<style type="text/css"">
+		$output .= '<style type="text/css">';
 		
-		@media (max-width: ' . $screen_width . 'px){
+		$output .= '@media (max-width: ' . $screen_width . 'px){';
 	
-				/*toggle and close buttons */
-				#mp-menu-toggle-button-holder, #mp-menu-close-button-holder{
-					display:inline-block;
-				}
+				$output .= '/*toggle and close buttons */';
+				$output .= '#mp-menu-toggle-button-holder, #mp-menu-close-button-holder{';
+					$output .= 'display:inline-block!important;';
+				$output .= '}';
 				
-				/*This gets applied to the body upon open*/
-				.mp-menu-open {
-					-webkit-transform: translate3d(-240px, 0, 0);
-					-moz-transform: translate3d(-240px, 0, 0);
-					transform: translate3d(-240px, 0, 0);
+				$output .= '/*This gets applied to the body upon open*/';
+				$output .= '.mp-menu-open {';
+					$output .= '-webkit-transform: translate3d(-240px, 0, 0);';
+					$output .= '-moz-transform: translate3d(-240px, 0, 0);';
+					$output .= 'transform: translate3d(-240px, 0, 0);';
 					
-					-webkit-transition: all .3s;
-					transition: all .3s;
-				}
+					$output .= '-webkit-transition: all .3s;';
+					$output .= 'transition: all .3s;';
+				$output .= '}';
 				
-				/*This gets applied to the body upon close */
-				.mp-menu-close {
-					-webkit-transform: translate3d(0, 0, 0);
-					-moz-transform: translate3d(0, 0, 0);
-					transform: translate3d(0, 0, 0);
-					right:0px;
+				$output .= '/*This gets applied to the body upon close */';
+				$output .= '.mp-menu-close {';
+					$output .= '-webkit-transform: translate3d(0, 0, 0);';
+					$output .= '-moz-transform: translate3d(0, 0, 0);';
+					$output .= 'transform: translate3d(0, 0, 0);';
+					$output .= 'right:0px;';
 					
-					-webkit-transition: all .3s;
-					transition: all .3s;
-				}
+					$output .= '-webkit-transition: all .3s;';
+					$output .= 'transition: all .3s;';
+				$output .= '}';
 				
-				/*This holds the menu when the screen is mobile sized */
-				#mp-menu-holder{
-					display:block;	
-				}
+				$output .= '/*This holds the menu when the screen is mobile sized */';
+				$output .= '#mp-menu-holder{';
+					$output .= 'display:block;	';
+				$output .= '}';
 				
-				/* This is the actual navigation div from wordpress when sitting in our mp-menu-holder div */
-				#mp-menu-holder [role~=navigation]{
-					width: 240px;
-					margin:0px!important;
-					position: absolute;
-					top: 0;
-					right: 0px;
-					overflow:hidden;
+				$output .= '/* This is the actual navigation div from wordpress when sitting in our mp-menu-holder div */';
+				$output .= '#mp-menu-holder [role~=navigation]{';
+					$output .= 'width: 240px;';
+					$output .= 'margin:0px!important;';
+					$output .= 'position: absolute;';
+					$output .= 'top: 0;';
+					$output .= 'right: 0px;';
+					$output .= 'overflow:hidden;';
 					
-					-webkit-transform: translate3d(240px, 0, 0);
-					-moz-transform: translate3d(240px, 0, 0);
-					transform: translate3d(240px, 0, 0);	
+					$output .= '-webkit-transform: translate3d(240px, 0, 0);';
+					$output .= '-moz-transform: translate3d(240px, 0, 0);';
+					$output .= 'transform: translate3d(240px, 0, 0);	';
 					
-					-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-					-moz-box-sizing: border-box;    /* Firefox, other Gecko */
-					box-sizing: border-box;         /* Opera/IE 8+ */
+					$output .= '-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */';
+					$output .= '-moz-box-sizing: border-box;    /* Firefox, other Gecko */';
+					$output .= 'box-sizing: border-box;         /* Opera/IE 8+ */';
 					
-					-webkit-transition: all .3s;
-					transition: all .3s;
-				}
+					$output .= '-webkit-transition: all .3s;';
+					$output .= 'transition: all .3s;';
+				$output .= '}';
 				
-				/*This gets applied to the navigation menu when it is "open" */
-				#mp-menu-holder .mp-menu-open{
-					-webkit-transform: translate3d(0, 0, 0)!important;
-					-moz-transform: translate3d(0, 0, 0)!important;
-					transform: translate3d(0, 0, 0)!important;	
+				$output .= '/*This gets applied to the navigation menu when it is "open" */';
+				$output .= '#mp-menu-holder .mp-menu-open{';
+					$output .= '-webkit-transform: translate3d(0, 0, 0)!important;';
+					$output .= '-moz-transform: translate3d(0, 0, 0)!important;';
+					$output .= 'transform: translate3d(0, 0, 0)!important;	';
 					
-					-webkit-transition: all .3s;
-					transition: all .3s;
-				}
+					$output .= '-webkit-transition: all .3s;';
+					$output .= 'transition: all .3s;';
+				$output .= '}';
 					
-				.mp-menu-header-search{
-					display:block;
-				}
+				$output .= '.mp-menu-header-search{';
+					$output .= 'display:block;';
+				$output .= '}';
 				
-			}</style>'; 
+			$output .= '}</style>'; 
 	 }
 	 
 	 //Additional CSS dependant on the screen width variable
-	 echo '<style type="text/css">
+	 $output .= '<style type="text/css">';
 	 		
-			@media (max-width: ' . $screen_width . 'px){
-			#mp-menu-holder #mp-menu-holder-inner [role~=navigation]{
-				padding: 5px 20px 0px 20px;
-				height:100%;
-			}
+			$output .= '@media (max-width: ' . $screen_width . 'px){';
+			$output .= '#mp-menu-holder #mp-menu-holder-inner [role~=navigation]{';
+				$output .= 'padding: 5px 20px 0px 20px!important;';
+				$output .= 'height:100%;';
+			$output .= '}';
 			
-			#mp-menu-holder #mp-menu-holder-inner [role~=navigation] div{
-				float:none;
-			}
+			$output .= '#mp-menu-holder #mp-menu-holder-inner [role~=navigation] div{';
+				$output .= 'float:none;';
+			$output .= '}';
 			
-			#mp-menu-holder #mp-menu-holder-inner ul{
-				box-shadow:none;
-				border-radius:0;
-				opacity:1;
-				-webkit-backface-visibility:visible;
-				-moz-backface-visibility: visible;
-				backface-visibility: visible;
-				-webkit-transform: none;
-				-moz-transform: none;
-				transform: none;
-			}
+			$output .= '#mp-menu-holder #mp-menu-holder-inner ul{';
+				$output .= 'box-shadow:none;';
+				$output .= 'border-radius:0;';
+				$output .= 'opacity:1;';
+				$output .= '-webkit-backface-visibility:visible;';
+				$output .= '-moz-backface-visibility: visible;';
+				$output .= 'backface-visibility: visible;';
+				$output .= '-webkit-transform: none;';
+				$output .= '-moz-transform: none;';
+				$output .= 'transform: none;';
+			$output .= '}';
 			
-			#mp-menu-holder #mp-menu-holder-inner li a{
-				border-radius:0;	
-			}
+			$output .= '#mp-menu-holder #mp-menu-holder-inner li a{';
+				$output .= 'border-radius:0;	';
+			$output .= '}';
 			
-			#mp-menu-holder #mp-menu-holder-inner li a:hover{
-				background:none;	
-			}
+			$output .= '#mp-menu-holder #mp-menu-holder-inner li a:hover{';
+				$output .= 'background:none;	';
+			$output .= '}';
 			
-			#mp-menu-holder #mp-menu-holder-inner li a:not(:last-child):after{
-				font-family: "mp_menu";
-				content: \'\e806\';
-				margin-left: 5px;
-				display: inline-block;
-				-webkit-transform: rotate(0deg);
-				-moz-transform: rotate(0deg);
-				-o-transform: rotate(0deg);
-				-ms-transform: rotate(0deg);
-				transform: rotate(0deg);
+			$output .= '#mp-menu-holder #mp-menu-holder-inner li a:not(:last-child):after{';
+				$output .= 'font-family: "mp_menu";';
+				$output .= 'content: \'\e806\';';
+				$output .= 'margin-left: 5px;';
+				$output .= 'display: inline-block;';
+				$output .= '-webkit-transform: rotate(0deg);';
+				$output .= '-moz-transform: rotate(0deg);';
+				$output .= '-o-transform: rotate(0deg);';
+				$output .= '-ms-transform: rotate(0deg);';
+				$output .= 'transform: rotate(0deg);';
 				
-				-webkit-transition: all .3s;
-				transition: all .3s;
-			}
+				$output .= '-webkit-transition: all .3s;';
+				$output .= 'transition: all .3s;';
+			$output .= '}';
 			
-			#mp-menu-holder #mp-menu-holder-inner li a:not(:last-child):hover:after{
-				-webkit-transform: rotate(90deg);
-				-moz-transform: rotate(90deg);
-				-o-transform: rotate(90deg);
-				-ms-transform: rotate(90deg);
-				transform: rotate(90deg);
-			}
+			$output .= '#mp-menu-holder #mp-menu-holder-inner li a:not(:last-child):hover:after{';
+				$output .= '-webkit-transform: rotate(90deg);';
+				$output .= '-moz-transform: rotate(90deg);';
+				$output .= '-o-transform: rotate(90deg);';
+				$output .= '-ms-transform: rotate(90deg);';
+				$output .= 'transform: rotate(90deg);';
+			$output .= '}';
 			
-			#mp-menu-holder #mp-menu-holder-inner ul,  #mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li{
-				margin:0!important;
-				padding:0!important;
-			}
+			$output .= '#mp-menu-holder #mp-menu-holder-inner ul,  #mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li{';
+				$output .= 'margin:0!important;';
+				$output .= 'padding:0!important;';
+			$output .= '}';
 			
-			#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul:after{
-				border:none;
-				border-radius:0;
-			}
+			$output .= '#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul:after{';
+				$output .= 'border:none;';
+				$output .= 'border-radius:0;';
+			$output .= '}';
 			
-			#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li a{
-				display:block;
-				 padding:5px 0px 5px 0px!important;
-			}
+			$output .= '#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li a{';
+				$output .= 'display:block;';
+				$output .= 'padding:5px 0px 5px 0px!important;';
+			$output .= '}';
 			
-			#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul, #mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li{
-				position:relative!important;
-				float:none!important;
-				clear: left;
-				display:block;
-				border:none;
-			}
-			#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul, #mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul li ul, #mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul li ul li ul{
-				margin-left:20px!important;
-				top:0px;
-				left:0px;
-				background:none;
-			}
-			/*Reset hover show/hide for dropdown menus. This is now handled by jquery on "click" */
-			#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul,
-			#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li:hover ul,
-			#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul li:hover ul,
-			#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul li ul li:hover ul,
-			#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul li ul li ul li:hover ul{
-				display:none;
-			}
+			$output .= '#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul, #mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li{';
+				$output .= 'position:relative!important;';
+				$output .= 'float:none!important;';
+				$output .= 'clear: left;';
+				$output .= 'display:block;';
+				$output .= 'border:none;';
+			$output .= '}';
+			$output .= '#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul, #mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul li ul, #mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul li ul li ul{';
+				$output .='margin-left:20px!important;';
+				$output .= 'top:0px;';
+				$output .= 'left:0px;';
+				$output .= 'background:none;';
+			$output .= '}';
+			$output .= '/*Reset hover show/hide for dropdown menus. This is now handled by jquery on "click" */';
+			$output .= '#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul,';
+			$output .= '#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li:hover ul,';
+			$output .= '#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul li:hover ul,';
+			$output .= '#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul li ul li:hover ul,';
+			$output .= '#mp-menu-holder #mp-menu-holder-inner [role~=navigation] ul li ul li ul li ul li:hover ul{';
+				$output .= 'display:none;';
+			$output .= '}';
 			
-			.mp-menu-toggle:before{
-				content:\'\e800\';
-			}
-			#mp-menu-close-button-holder .mp-menu-close-button:before{
-				content: \'\e805\';
-				font-size:150%;
-				margin-left:-3px;
-			}
-		}</style>';
+			$output .= '.mp-menu-toggle:before{';
+				$output .= 'content:\'\e800\';';
+			$output .= '}';
+			$output .= '#mp-menu-close-button-holder .mp-menu-close-button:before{';
+				$output .= 'content: \'\e805\';';
+				$output .= 'font-size:150%;';
+				$output .= 'margin-left:-3px;';
+			$output .= '}';
+		$output .= '}</style>';
+	
+	echo $output;
 	 
-	  //MP Menu Skin
+	 //MP Menu Skin
 	 $menu_skin = get_theme_mod( 'mp_menu_skin' ) ;
 	 $menu_skin = !empty( $menu_skin ) ? $menu_skin : 'mp-menu-default-skin.css';
 	 wp_enqueue_style( 'mp_menu_skin', plugins_url( '/css/skins/' . $menu_skin, dirname( __FILE__ ) ) );

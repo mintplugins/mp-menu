@@ -12,8 +12,13 @@
  
 function mp_menu_customizer(){
 	
+	//If this WP has the mp_stacks_menu plugin installed, we won't show these options and use those instead.
+	if ( function_exists( 'mp_stacks_menu_textdomain' ) ){
+		return false;	
+	}
+	
 	$args = array(
-		array( 'section_id' => 'mp_menu_settings', 'section_title' => __( 'MP Menu', 'mp_core' ),'section_priority' => 1,
+		array( 'section_id' => 'mp_menu_settings', 'section_title' => __( 'Mobile Menu Settings', 'mp_core' ),'section_priority' => 1,
 			'settings' => array(
 				'mp_menu_change_at_screen_width' => array(
 					'label'      => __( 'Switch to Pop-Out at this Screen Width', 'mp_core' ),

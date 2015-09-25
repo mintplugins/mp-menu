@@ -26,7 +26,8 @@ jQuery(document).ready(function($){
 	var $items = $( '.site, .hfeed, [role=navigation]' );
 	
 	//Open function
-	var open = function() {
+	var mp_menu_open = function() {
+
 		//$( 'body' ).addClass( 'mobile-open' );
 		setTimeout(function() {
 			$items.removeClass('mp-menu-close').addClass('mp-menu-open');
@@ -38,7 +39,7 @@ jQuery(document).ready(function($){
 	}
 	
 	//Close function
-	var close = function() { 
+	var mp_menu_close = function() { 
 		//$( 'body' ).delay(300).removeClass( 'mobile-open' );
 		$items.removeClass('mp-menu-open').addClass('mp-menu-close');
 		
@@ -58,13 +59,13 @@ jQuery(document).ready(function($){
 		
 		e.preventDefault();
 
-		$items.hasClass( 'mp-menu-open' ) ? $(close) : $(open);
+		$items.hasClass( 'mp-menu-open' ) ? $(mp_menu_close) : $(mp_menu_open);
 	});
 	
 	//If the user clicks on the main site area, close the nav as well
 	$(document).on('touchstart click', '#mp-menu-site-wrap > .site.mp-menu-open, #mp-menu-site-wrap > .hfeed.mp-menu-open', function(e){
 				
-		$(close);
+		$(mp_menu_close);
 		
 	});
 	
