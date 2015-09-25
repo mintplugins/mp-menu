@@ -3,8 +3,8 @@ Contributors: johnstonphilip
 Donate link: http://mintplugins.com/
 Tags: message bar, header
 Requires at least: 3.5
-Tested up to: 3.8.1
-Stable tag: 1.0.0.2
+Tested up to: 4.3
+Stable tag: 1.0.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,10 @@ Set the colours and pop-out location not he “Appearance” > “Customize” s
 == Screenshots ==
 
 == Changelog ==
+
+= 1.0.0.4 = September 25, 2015
+* General Update to minify css code output.
+* Changed js variable names to have mp_menu prefix.
 
 = 1.0.0.3 = September 1, 2014
 * Removed auto turn off for Google Bot. This can be done through the new feature in the customizer which allows you to only use the pop-out at customized widths.
