@@ -1,4 +1,4 @@
-mp_stacks
+MP Menu
 =========
 
-Display stacks of content from WordPress
+Mobile Popout for WordPress header menus.
