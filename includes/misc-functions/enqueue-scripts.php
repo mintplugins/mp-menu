@@ -4,7 +4,16 @@
  * Enqueue Scripts for the MP Menu
  */
  function mp_menu_enqueue_scripts(){
-		
+	 
+	 //If there is no menu applied to the primary menu slot
+	 $nav_locations = get_theme_mod( 'nav_menu_locations' );
+	 if ( !isset( $nav_locations['primary'] ) ){
+	 	return;
+	 }
+	 else if( isset( $nav_locations['primary'] ) && empty( $nav_locations['primary']) ){
+		 return;
+	 }
+	 			
 	 //Get screen width for MP menu
 	 $screen_width = get_theme_mod('mp_menu_change_at_screen_width');
 	 $screen_width = empty($screen_width) ? 600 : $screen_width;
